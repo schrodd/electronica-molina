@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
+  text-decoration: none;
+  color:rgb(50, 50, 50);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: ghostwhite;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navBar{
+  padding: 10px 20px;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
 }
-
-.App-link {
-  color: #61dafb;
+.item{
+  text-align: center;
+  padding: 0px 20px;
+  flex-grow: 1;
+  transition: font-size .5s 0s;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item:hover{
+  font-size: 17px;
+  font-weight:600;
+}
+.logo img{
+  width: 100px;
+  padding: 10px;
+  transition: width .3s 0s;
+}
+.logo img:hover{
+  width: 115px;
+}
+.logo{
+  width:150px;
+  display: block;
+  flex-grow: 1;
+}
+a>i{
+  margin-right:8px;
+  font-size: 12px;
+}
+.space{
+  flex-grow:32;
+}
+.cart{
+  padding: 0px 20px;
+  font-size: 20px;
+  transition: font-size .3s 0s;
+}
+.cart:hover{
+  font-size: 25px;
+}
+.itemListContainer{
+  width: 100%;
+  height: 400px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.itemListContainer p{
+  margin-top: 10px;
 }
