@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <ItemListContainer text={"En construcción 😬"}/>
+      <ItemListContainer/>
     </>
   )
 }
