@@ -1,0 +1,11 @@
+.itemListContainer{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+  }
+  .itemListContainer p{
+    margin: 10px 15px;
+  }

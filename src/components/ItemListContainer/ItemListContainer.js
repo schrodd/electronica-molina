@@ -1,6 +1,7 @@
-import ItemList from "./ItemList"
-import { getProducts } from "./asyncmock"
+import ItemList from "../ItemList/ItemList"
+import { getProducts } from "../asyncmock"
 import { useEffect, useState } from "react"
+import "./ItemListContainer.css"
 
 const ItemListContainer = () => {
 

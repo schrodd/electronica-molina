@@ -1,6 +1,7 @@
-import NavBarItem from './NavBarItem'
-import CartWidget from './CartWidget'
-import logo from '../resources/logobn.svg'
+import NavBarItem from '../NavBarItem/NavBarItem'
+import CartWidget from '../CartWidget/CartWidget'
+import logo from '../../resources/logobn.svg'
+import "./NavBar.css"
 
 const NavBar = () => {
     return (
