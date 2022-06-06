@@ -1,0 +1,22 @@
+.no-products{
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .no-products *{
+    margin: 10px 0;
+  }
+  .no-products i{
+    font-size: 3rem;
+  }
+  .go-back{
+    font-weight: 600;
+    border: 2px solid #323232;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px 20px;
+    transition: all 0.3s 0s;
+  }
+  .go-back:hover{
+    background-color: rgb(50,50,50);
+    color: white;
+  }

@@ -1,0 +1,38 @@
+.item-detail{
+    background-color: white;
+    width: 1000px;
+    display: flex;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.item-detail img{
+    max-width: 300px;
+    margin: 50px;
+}
+.item-detail-text{
+    margin: 30px;
+}
+.item-detail-title{
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+.item-id{
+    margin: 10px 0;
+    color: grey;
+}
+.item-detail-cat{
+    /* font-weight: bold; */
+    font-size: .75rem;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+.item-detail-price{
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.item-detail-desc{
+    font-size: 1rem;
+    color: grey;
+}
