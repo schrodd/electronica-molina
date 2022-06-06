@@ -13,9 +13,9 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const [prod, setProd] = useState({})
     useEffect(() => {
-        getProducts().then(res => setProd(res.find(e => e.id == id)))
+        getProducts().then(res => setProd(res.find(e => e.id === id)))
         .catch(err => console.log(err)).finally(() => setLoading(false))
-    }, [])
+    }, [id])
 
     if (loading) return <Spinner/>
     else return <ItemDetail {...prod}/>
