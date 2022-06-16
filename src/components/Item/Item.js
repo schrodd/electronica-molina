@@ -1,6 +1,8 @@
 import "./Item.css"
 import { Link } from 'react-router-dom'
 import priceFormatter from '../priceFormatter'
+import '../presetText'
+import presetText from "../presetText"
 
 const Item = ({id, title, price, img}) => {
 
@@ -14,7 +16,7 @@ const Item = ({id, title, price, img}) => {
                 <p className="item-title">{title}</p>
                 <p className="item-price">{priceFormatter(price)}</p>
                 <div className="view-more-btn flex-centered">
-                    <Link to={`/detail/${id}`}>Ver detalle</Link>
+                    <Link to={`/detail/${id}`}>{presetText.seeDetail}</Link>
                 </div>
             </div>
         </div>
