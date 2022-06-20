@@ -6,6 +6,7 @@ import image5 from "../resources/5.png"
 import image6 from "../resources/6.png"
 import image7 from "../resources/7.png"
 import image8 from "../resources/8.png"
+import presetText from './presetText'
 
 const products = [
     {
@@ -14,7 +15,7 @@ const products = [
         price: 14999,
         img: image1,
         category: "parlantes",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "A-46789",
@@ -22,7 +23,7 @@ const products = [
         price: 4999,
         img: image2,
         category: "auriculares",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "T-85164",
@@ -30,7 +31,7 @@ const products = [
         price: 19999,
         img: image3,
         category: "tablets",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "N-84956",
@@ -38,7 +39,7 @@ const products = [
         price: 89999,
         img: image4,
         category: "notebooks",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "P-46484",
@@ -46,7 +47,7 @@ const products = [
         price: 8999,
         img: image5,
         category: "parlantes",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "P-29381",
@@ -54,7 +55,7 @@ const products = [
         price: 24999,
         img: image6,
         category: "parlantes",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "T-51231",
@@ -62,7 +63,7 @@ const products = [
         price: 54999,
         img: image7,
         category: "tablets",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     },
     {
         id: "A-29388",
@@ -70,7 +71,7 @@ const products = [
         price: 12999,
         img: image8,
         category: "auriculares",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        description: presetText.lorem
     }
 ]
 

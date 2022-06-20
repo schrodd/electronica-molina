@@ -6,9 +6,7 @@ import Spinner from '../Spinner/Spinner'
 
 const ItemDetailContainer = () => {
     const params = useParams()
-    console.log(params)
     const id = params.productId
-    console.log(id)
 
     const [loading, setLoading] = useState(true)
     const [prod, setProd] = useState({})
@@ -18,7 +16,7 @@ const ItemDetailContainer = () => {
     }, [id])
 
     if (loading) return <Spinner/>
-    else return <ItemDetail {...prod}/>
+    else return <ItemDetail prod={prod}/>
 }
 
 export default ItemDetailContainer

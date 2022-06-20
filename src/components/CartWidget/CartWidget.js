@@ -2,7 +2,7 @@ import "./CartWidget.css"
 
 const CartWidget = () => {
     return (
-        <i className={"fa-solid fa-cart-shopping cart"}></i>
+        <i className={"fa-solid fa-cart-shopping cart-widget"}></i>
     )
 }
 

@@ -1,9 +1,9 @@
-.cart {
+.cart-widget {
   padding: 0px 20px;
   font-size: 20px;
   transition: font-size .3s 0s;
 }
 
-.cart:hover {
+.cart-widget:hover {
   font-size: 25px;
 }

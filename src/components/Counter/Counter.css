@@ -1,0 +1,18 @@
+.counter {
+    display: flex;
+    margin: 8px 0 5px 0;
+}
+
+.counter .qty {
+    height: 20px;
+    width: 20px;
+}
+
+.counter .count {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.counter * {
+    margin-right: 5px;
+}

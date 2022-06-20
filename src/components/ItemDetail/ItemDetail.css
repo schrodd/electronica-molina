@@ -36,3 +36,22 @@
     font-size: 1rem;
     color: grey;
 }
+.cart-add, .cart-remove, .cart-clear, .cart-pay{
+    padding: 5px 15px;
+    margin: 5px 5px 3px 0;
+    background-color: rgb(50,50,50);
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.cart-add:hover, .cart-remove:hover, .cart-clear:hover, .cart-pay:hover{
+    background-color: black;
+}
+
+.cart-units {
+    margin-top: 5px;
+    font-size: 14px;
+}
