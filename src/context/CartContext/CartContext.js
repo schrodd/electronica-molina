@@ -1,13 +1,14 @@
+// Personalmente hubiera usado otro método para mantener la info de los productos en el context, pero me limité a realizar la actividad como fué solicitada.
+// Me gustaría haber usado sólo el ID en vez de el objeto entero del producto. De esa forma no se duplican datos (no guardaría en el context un duplicado del objeto prod que trae, en este caso, del asyncmock)
+
 import { useState, createContext } from 'react'
 
 const CartContext = createContext()
 export const CartProvider = ({ children }) => {
     const [ cart, setCart ] = useState([])
-    console.log(cart)
     const addItem = (prod, qty) => {
         const copyCart = [...cart]
         const exists = cart.findIndex(e => e.prod.id === prod.id)
-        console.log(exists)
         if (exists === -1){
             copyCart.push({prod,qty})
         } else {
@@ -18,7 +19,6 @@ export const CartProvider = ({ children }) => {
     const removeItem = (prod) => {
         const copyCart = [...cart]
         const exists = cart.findIndex(e => e.prod.id === prod.id)
-        console.log(exists)
         if (exists === -1){
             console.log("El producto no existe en carrito")
         } else {

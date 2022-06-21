@@ -29,13 +29,16 @@ const ItemDetail = ({prod}) => { // Decidí no desestructurar por ahora las prop
                     {prod.price !== undefined && <p className="item-detail-price">{priceFormatter(prod.price)}</p>}
                     <p className="item-detail-desc">{prod.description}</p>
                     <Counter count={count} add={addCount} subtract={subtractCount}/>
-                    {cartContext.amountInCart(prod) !== -1
+                    {cartContext.amountInCart(prod) > 0
                     && <Link className='cart-pay' to={'/cart'}>Finalizar compra</Link>}
                     { /* No hice desaparecer el counter debido a que me parece que alguien podría querer sumar más unidades del mismo producto y no sería posible */}
                     {count > 0 && <button className="cart-add" onClick={() => cartContext.addItem(prod, count)}>{presetText.addToCart}</button>}
-                    {cartContext.amountInCart(prod) > 0 && <button className='cart-remove' onClick={() => cartContext.removeItem(prod)}>{presetText.removeFromCart}</button>}
-                    <button className='cart-clear' onClick={() => cartContext.clearCart()}>{presetText.clearCart}</button> 
-                    {cartContext.amountInCart(prod) > 0 && <p className='cart-units'>Hay {cartContext.amountInCart(prod)} unidades de este producto en el carrito</p>}
+                    {cartContext.amountInCart(prod) > 0 && 
+                        <>
+                            <button className='cart-remove' onClick={() => cartContext.removeItem(prod)}>{presetText.removeFromCart}</button>
+                            <p className='cart-units'>Hay {cartContext.amountInCart(prod)} unidades de este producto en el carrito</p>
+                        </>
+                    }
                 </div>
             </div>
         </div>

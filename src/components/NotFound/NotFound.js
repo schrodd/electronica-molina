@@ -6,7 +6,7 @@ import presetText from '../presetText'
 const NotFound = () => {
     return (
         <div className="no-products flex-centered">
-            <i class="fa-regular fa-face-frown"></i>
+            <i className="fa-regular fa-face-frown"></i>
             <h1>{presetText.notFoundTitle}</h1>
             <p>{presetText.notFoundDesc}</p>
             <Link to='/' className="go-back">{presetText.goHome}</Link>
