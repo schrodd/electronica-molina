@@ -1,6 +1,14 @@
 import './Counter.css'
 
-const Counter = ({count, add, subtract}) => {
+const Counter = ({count, setCount}) => {
+
+    function add(){
+        setCount(count + 1)
+    } 
+    function subtract(){
+        count > 0 && setCount(count - 1)
+    }
+
     return (
         <div className='counter'>
             <button className='qty add' onClick={() => subtract()}>-</button>

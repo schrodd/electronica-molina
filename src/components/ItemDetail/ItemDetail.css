@@ -15,17 +15,18 @@
 }
 .item-detail-title{
     font-size: 1.5rem;
-    margin: 15px 0;
+    margin: 10px 0;
 }
-.item-id{
+.item-sku{
     margin: 10px 0;
     color: grey;
+    font-size: .75rem;
+    font-weight: bold;
 }
 .item-detail-cat{
     /* font-weight: bold; */
     font-size: .75rem;
     text-transform: capitalize;
-    margin: 10px 0;
 }
 .item-detail-price{
     margin: 15px 0;
@@ -33,6 +34,11 @@
     font-size: 1.1rem;
 }
 .item-detail-desc{
-    font-size: 1rem;
+    font-size: .8rem;
     color: grey;
+    margin-bottom: 15px;
+}
+.item-stock {
+    font-size: .8rem;
+    margin-bottom: 15px;
 }

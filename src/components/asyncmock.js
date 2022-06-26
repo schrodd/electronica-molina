@@ -6,7 +6,7 @@ import image5 from "../resources/5.png"
 import image6 from "../resources/6.png"
 import image7 from "../resources/7.png"
 import image8 from "../resources/8.png"
-import presetText from './presetText'
+import presetText from "../helpers/presetText"
 
 const products = [
     {

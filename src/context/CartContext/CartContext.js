@@ -6,7 +6,7 @@ import { useState, createContext } from 'react'
 const CartContext = createContext()
 export const CartProvider = ({ children }) => {
     const [ cart, setCart ] = useState([])
-    const addItem = (prod, qty) => {
+    const addItem = (prod, qty, stock) => {
         const copyCart = [...cart]
         const exists = cart.findIndex(e => e.prod.id === prod.id)
         if (exists === -1){
@@ -35,8 +35,11 @@ export const CartProvider = ({ children }) => {
         return -1 // Si no existe en carrito
     }
 
+    const resetCounter = (setCount) => {
+        setCount(0)
+    }
     return (
-        <CartContext.Provider value={{cart, addItem, removeItem, clearCart, amountInCart}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clearCart, amountInCart, resetCounter}}>
             {children}
         </CartContext.Provider>
     )

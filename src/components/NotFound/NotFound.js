@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
 import './NotFound.css'
-import '../presetText'
-import presetText from '../presetText'
+import presetText from '../../helpers/presetText'
 
-const NotFound = () => {
+const NotFound = ({message = presetText.notFoundDesc}) => {
     return (
         <div className="no-products flex-centered">
             <i className="fa-regular fa-face-frown"></i>
             <h1>{presetText.notFoundTitle}</h1>
-            <p>{presetText.notFoundDesc}</p>
-            <Link to='/' className="go-back">{presetText.goHome}</Link>
+            <p>{message}</p>
+            <Link to='/' className="go-back btn1">{presetText.goHome}</Link>
         </div>
     )
 }
