@@ -8,8 +8,7 @@ import NotFound from '../NotFound/NotFound'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-    const {cart, removeItem, clearCart} = useContext(CartContext)
-    const cartTotalValue = (cart) => cart.reduce((a,e) => a + e.prod.price*e.qty, 0)
+    const {cart, removeItem, clearCart, cartTotalValue} = useContext(CartContext)
 
     return (
         <div className='flex-centered'>
@@ -22,7 +21,7 @@ const Cart = () => {
                 {cart.length > 0 && 
                     <div className='cart-total-section'>
                         <p className='cart-total'>Total: {priceFormatter(cartTotalValue(cart))}</p>
-                        <Link class='btn1' to='/cart-form'>{presetText.finishPurchase}</Link>
+                        <Link className='btn1' to='/cart-form'>{presetText.finishPurchase}</Link>
                     </div>
                 }
                 
