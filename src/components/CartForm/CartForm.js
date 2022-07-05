@@ -4,17 +4,28 @@ import { newOrder } from '../../services/firebase'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext/CartContext'
 import Spinner from '../Spinner/Spinner'
+import { Link } from 'react-router-dom'
 
 const CartForm = () => {
-    const {cart, cartTotalValue} = useContext(CartContext)
+    const {cart, cartTotalValue, clearCart} = useContext(CartContext)
     const [loading, setLoading] = useState(false)
     const [id, setId] = useState(undefined);
     const sendOrder = () => {
         const name = document.querySelector('#name').value
         const email = document.querySelector('#email').value
         const phone = document.querySelector('#phone').value
-        console.log(`${name}, ${email}, ${phone}`)
-        newOrder({name, email, phone}, cart, cartTotalValue(cart), setId, setLoading)
+        /* insertar validación regex usando useEffect*/
+        newOrder(
+          { name, email, phone },
+          cart,
+          cartTotalValue(cart),
+          setId,
+          setLoading,
+          clearCart
+        );
+    }
+    const idToClipboard = () => {
+      navigator.clipboard.writeText(id);
     }
 
     if (loading) {
@@ -22,17 +33,21 @@ const CartForm = () => {
     } else {
         if (id) {
             return (
-              <>
-                <h2>Gracias por tu compra</h2>
-                <p>El ID de tu compra es {id}</p>
-              </>
+              <div className="cart-form success">
+                <i className="fa-solid fa-circle-check"></i>
+                <h1 style={{margin:'20px 0 0 0'}}>¡Gracias!</h1>
+                <p>
+                  El ID de tu compra es: <b>{id}</b><i className="fa-solid fa-copy" onClick={() => idToClipboard()} style={{marginTop:0}}></i>
+                </p>
+                <Link to='/' className="go-back btn1">{presetText.goHome}</Link>
+              </div>
             );
         } else {
             return (
               <div className="flex-centered">
                 <div className="cart-form">
                   <i className="fa-solid fa-cart-shopping"></i>
-                  <h1>{presetText.cfTitle}</h1>
+                  <h1 style={{marginLeft:0}}>{presetText.cfTitle}</h1>
                   <p>{presetText.cfSubtitle}</p>
                   <input
                     type="text"
@@ -45,10 +60,9 @@ const CartForm = () => {
                     id="email"
                   />
                   <input
-                    type="text"
+                    type="number"
                     placeholder={presetText.cfPhone}
                     id="phone"
-                    inputMode="numeric"
                   />
                   <button className="btn1" onClick={() => sendOrder()}>
                     {presetText.finishPurchase}

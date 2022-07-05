@@ -43,7 +43,7 @@ export const getProductById = (productId, setLoading, setProd) => {
 }
 
 // Submit an order
-export const newOrder = (buyer, items, total, setId, setLoading) => {
+export const newOrder = (buyer, items, total, setId, setLoading, clearCart) => {
   setLoading(true)
   const ordersRef = collection(db, 'orders')
   const newOrder = {
@@ -54,6 +54,7 @@ export const newOrder = (buyer, items, total, setId, setLoading) => {
   addDoc(ordersRef, newOrder)
     .then((res) => {
       setId(res.id)
+      clearCart()
     })
     .catch((e) => {
       console.log(e)
