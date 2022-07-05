@@ -15,7 +15,7 @@ const Item = ({id, title, price, img, sku}) => {
                 <p className="item-title">{title}</p>
                 <p className="item-price">{priceFormatter(price)}</p>
                 <div className="view-more-btn flex-centered">
-                    <Link to={`/detail/${sku}`}>{presetText.seeDetail}</Link>
+                    <Link to={`/detail/${id}`}>{presetText.seeDetail}</Link>
                 </div>
             </div> 
         </div>

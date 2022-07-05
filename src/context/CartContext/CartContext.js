@@ -1,6 +1,3 @@
-// Personalmente hubiera usado otro método para mantener la info de los productos en el context, pero me limité a realizar la actividad como fué solicitada.
-// Me gustaría haber usado sólo el ID en vez de el objeto entero del producto. De esa forma no se duplican datos (no guardaría en el context un duplicado del objeto prod que trae, en este caso, del asyncmock)
-
 import { useState, createContext } from 'react'
 
 const CartContext = createContext()
@@ -34,12 +31,15 @@ export const CartProvider = ({ children }) => {
         if (exists) return exists.qty
         return -1 // Si no existe en carrito
     }
-
     const resetCounter = (setCount) => {
         setCount(0)
     }
+    const available = (prod) => {
+        const inCart = amountInCart(prod)
+        return inCart !== -1 ? prod.stock - inCart : prod.stock
+    }
     return (
-        <CartContext.Provider value={{cart, addItem, removeItem, clearCart, amountInCart, resetCounter}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clearCart, amountInCart, resetCounter, available}}>
             {children}
         </CartContext.Provider>
     )

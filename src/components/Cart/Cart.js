@@ -5,6 +5,7 @@ import CartItem from '../CartItem/CartItem'
 import presetText from '../../helpers/presetText'
 import priceFormatter from '../../helpers/priceFormatter'
 import NotFound from '../NotFound/NotFound'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const {cart, removeItem, clearCart} = useContext(CartContext)
@@ -18,7 +19,12 @@ const Cart = () => {
                 {cart.length > 0
                 ? cart.map(e => <CartItem item={e} key={e.prod.id} remove={removeItem}/>)
                 : <NotFound message={presetText.emptyCart}/> }
-                {cart.length > 0 && <p className='cart-total'>Total: {priceFormatter(cartTotalValue(cart))}</p>}
+                {cart.length > 0 && 
+                    <div className='cart-total-section'>
+                        <p className='cart-total'>Total: {priceFormatter(cartTotalValue(cart))}</p>
+                        <Link class='btn1' to='/cart-form'>{presetText.finishPurchase}</Link>
+                    </div>
+                }
                 
             </div>
         </div>

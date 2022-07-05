@@ -7,6 +7,7 @@ const presetText = {
     notFoundDesc: 'No hemos encontrado lo que buscabas',
     goHome: 'Ir al inicio',
     notFoundCategory: 'No hay productos en esta categoría',
+    notFoundProduct: 'No se ha encontrado el producto',
   
     // Botón de ver detalle del producto
     seeDetail: 'Ver detalle',
@@ -20,6 +21,7 @@ const presetText = {
     removeFromCart: 'Sacar',
     cartTitle: 'Carrito de compras',
     emptyCart: 'No hay productos en tu carrito',
+    finishPurchase: 'Finalizar compra',
 
     // stockTextFormatter
     zeroStock: 'No hay más unidades de este producto',
@@ -27,6 +29,12 @@ const presetText = {
     lowStock: (stock) => `Quedan sólo ${stock} unidades de este producto`,
     stock: (stock) => `Quedan ${stock} unidades de este producto`,
 
+    // CartForm
+    cfTitle: '¡Ya casi!',
+    cfSubtitle: 'Llene el siguiente formulario para finalizar su compra',
+    cfName: 'Nombre y apellido',
+    cfEmail: 'Correo electrónico',
+    cfPhone: 'Número de teléfono',
 }
 
 export default presetText

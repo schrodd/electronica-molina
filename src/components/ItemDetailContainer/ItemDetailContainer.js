@@ -1,23 +1,23 @@
 import { useEffect, useState } from 'react'
-import { getProductBySku } from '../../services/firebase'
+import { getProductById } from '../../services/firebase'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from 'react-router-dom'
 import Spinner from '../Spinner/Spinner'
+import NotFound from '../NotFound/NotFound'
+import presetText from '../../helpers/presetText'
 
 const ItemDetailContainer = () => {
     const params = useParams()
-    const sku = params.productSku
+    const id = params.productId
 
     const [loading, setLoading] = useState(true)
     const [prod, setProd] = useState({})
     useEffect(() => {
-        getProductBySku(sku, setLoading, setProd)
-        /* getProducts().then(res => setProd(res.find(e => e.id === id)))
-        .catch(err => console.log(err)).finally(() => setLoading(false)) */
-    }, [sku])
+        getProductById(id, setLoading, setProd)
+    }, [id])
 
-    if (loading) return <Spinner/>
-    else return <ItemDetail prod={prod}/>
+    // Muestra el spinner mientras carga la data. Si el producto existe, lo muestra. Si no, muestra el componente NotFound.
+    return loading ? <Spinner/> : prod.title === undefined ? <NotFound message={presetText.notFoundProduct} /> : <ItemDetail prod={prod}/>
 }
 
 export default ItemDetailContainer

@@ -1,11 +1,10 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore'
+import { getFirestore, getDocs, getDoc, doc, collection, query, where } from 'firebase/firestore'
 
-// TODO: Add SDKs for Firebase products that you want to use
+// SDKs for Firebase products
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCNNdU7TCpR78ALeE4reb2ho4Uf9Jt2DfA",
   authDomain: "electronica-molina.firebaseapp.com",
@@ -19,8 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 
-// Bring products
-
+// Bring products by category
 export const getProductsByCategory = (productCat, setLoading, setProducts) => {
   const collectionRef = productCat ? query(collection(db, 'products'), where('category', '==', productCat)) : collection(db, 'products')
   getDocs(collectionRef)
@@ -32,15 +30,16 @@ export const getProductsByCategory = (productCat, setLoading, setProducts) => {
   }).catch(e => console.log(e))
   .finally(() => setLoading(false))
 }
-
-export const getProductBySku = (productSku, setLoading, setProd) => {
-  const collectionRef = query(collection(db, 'products'), where('sku', '==', productSku))
-  getDocs(collectionRef)
-  .then(response => {
-      const productFormatted = response.docs.map(doc => {
-          return { id: doc.id, ...doc.data()}
-        })
-        setProd(productFormatted[0])
+ 
+// Bring product by id
+export const getProductById = (productId, setLoading, setProd) => {
+  const docRef = doc(db, 'products', productId)
+  getDoc(docRef)
+  .then(doc => {
+      const productFormatted = { id: doc.id, ...doc.data() }
+      setProd(productFormatted)
   }).catch(e => console.log(e))
   .finally(() => setLoading(false))
 }
+
+// Submit an order
