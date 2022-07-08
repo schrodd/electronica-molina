@@ -45,7 +45,7 @@ export const getProductById = (productId, setLoading, setProd) => {
 // Check stock of a product
 export const checkStock = (productId) => {
   const docRef = doc(db, 'products', productId)
-  getDoc(docRef)
+  return getDoc(docRef)
   .then(doc => {
       const stock = { id: doc.id, ...doc.data() }
       return stock.stock
@@ -56,13 +56,17 @@ export const checkStock = (productId) => {
 export const newOrder = (buyer, items, total, setId, setLoading, clearCart, setError) => {
   setLoading(true)
   const ordersRef = collection(db, 'orders')
+  console.log(items)
   const newOrder = {
     buyer: buyer,
     items: items, // Array [{{prod1}, qty1}, {{prod2}, qty2}]
     total: total,
   }
-  
-  if (newOrder.items.every(e => e.qty <= checkStock(e.prod.id))) { // Valida si los items en carrito son menos o igual que la cantidad que hay actualmente en stock
+  newOrder.items.forEach(e => {
+    console.log(e.qty)
+    console.log(checkStock(e.prod.id))
+  })
+  if (newOrder.items.every(e => checkStock(e.prod.id).then(res => e.qty <= res))) { // Valida si los items en carrito son menos o igual que la cantidad que hay actualmente en stock
     addDoc(ordersRef, newOrder)
     .then((res) => {
       setId(res.id)
