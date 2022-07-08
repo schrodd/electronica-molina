@@ -22,6 +22,7 @@ const presetText = {
     cartTitle: 'Carrito de compras',
     emptyCart: 'No hay productos en tu carrito',
     finishPurchase: 'Finalizar compra',
+    notEnoughStock: 'No hay suficiente stock para completar tu compra',
 
     // stockTextFormatter
     zeroStock: 'No hay más unidades de este producto',

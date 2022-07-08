@@ -1,17 +1,17 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, getDoc, doc, collection, query, where, addDoc } from 'firebase/firestore'
+import { getFirestore, getDocs, getDoc, doc, collection, query, where, addDoc, updateDoc } from 'firebase/firestore'
 
 // SDKs for Firebase products
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCNNdU7TCpR78ALeE4reb2ho4Uf9Jt2DfA",
-  authDomain: "electronica-molina.firebaseapp.com",
-  projectId: "electronica-molina",
-  storageBucket: "electronica-molina.appspot.com",
-  messagingSenderId: "289694069791",
-  appId: "1:289694069791:web:d6fc8a406f5949554e912a"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
@@ -42,24 +42,49 @@ export const getProductById = (productId, setLoading, setProd) => {
   .finally(() => setLoading(false))
 }
 
+// Check stock of a product
+export const checkStock = (productId) => {
+  const docRef = doc(db, 'products', productId)
+  getDoc(docRef)
+  .then(doc => {
+      const stock = { id: doc.id, ...doc.data() }
+      return stock.stock
+  }).catch(e => console.log(e))
+}
+
 // Submit an order
-export const newOrder = (buyer, items, total, setId, setLoading, clearCart) => {
+export const newOrder = (buyer, items, total, setId, setLoading, clearCart, setError) => {
   setLoading(true)
   const ordersRef = collection(db, 'orders')
   const newOrder = {
     buyer: buyer,
-    items: items, // Array [{id1, title1, price1, qty1}, {id2, title2, price2, qty2}]
+    items: items, // Array [{{prod1}, qty1}, {{prod2}, qty2}]
     total: total,
   }
-  addDoc(ordersRef, newOrder)
+  
+  if (newOrder.items.every(e => e.qty <= checkStock(e.prod.id))) { // Valida si los items en carrito son menos o igual que la cantidad que hay actualmente en stock
+    addDoc(ordersRef, newOrder)
     .then((res) => {
       setId(res.id)
+      newOrder.items.forEach(e => updateStock(e.prod.stock, e.prod.id, e.qty)) // Actualiza el stock de todos los ítems del carrito
       clearCart()
+      console.log('Success')
     })
     .catch((e) => {
-      console.log(e)
+      console.log('Failed: ' + e)
     })
     .finally(() => {
       setLoading(false)
-    });
-};
+    })
+  } else {
+    setError(true)
+    setLoading(false)
+    clearCart()
+  }
+}
+
+// Update stock of a single product
+const updateStock = (stock, id, qty) => {
+  const docRef = doc(db, 'products', id)
+  updateDoc(docRef, {stock: stock - qty}).catch(e => console.log(e))
+}

@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom'
 const CartForm = () => {
     const {cart, cartTotalValue, clearCart} = useContext(CartContext)
     const [loading, setLoading] = useState(false)
-    const [id, setId] = useState(undefined);
+    const [id, setId] = useState(undefined)
+    const [error, setError] = useState(false);
     const sendOrder = () => {
         const name = document.querySelector('#name').value
         const email = document.querySelector('#email').value
@@ -21,7 +22,8 @@ const CartForm = () => {
           cartTotalValue(cart),
           setId,
           setLoading,
-          clearCart
+          clearCart,
+          setError
         );
     }
     const idToClipboard = () => {
@@ -31,9 +33,9 @@ const CartForm = () => {
     if (loading) {
         return <Spinner/>
     } else {
-        if (id) {
+        if (id && !error) {
             return (
-              <div className="cart-form success">
+              <div className="cart-form result">
                 <i className="fa-solid fa-circle-check"></i>
                 <h1 style={{margin:'20px 0 0 0'}}>¡Gracias!</h1>
                 <p>
@@ -42,6 +44,17 @@ const CartForm = () => {
                 <Link to='/' className="go-back btn1">{presetText.goHome}</Link>
               </div>
             );
+        } else if (!id && error) {
+          return (
+            <div className="cart-form result">
+                <i className="fa-solid fa-circle-xmark"></i>
+                <h1 style={{margin:'20px 0 0 0'}}>Error</h1>
+                <p>
+                  {presetText.notEnoughStock}
+                </p>
+                <Link to='/' className="go-back btn1">{presetText.goHome}</Link>
+              </div>
+          )
         } else {
             return (
               <div className="flex-centered">
