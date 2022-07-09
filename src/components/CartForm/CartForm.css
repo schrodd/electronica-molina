@@ -82,3 +82,9 @@ input::-webkit-inner-spin-button {
 .cart-form.result .fa-copy:hover {
     opacity: 1;
 }
+
+.cart-form .check-data {
+    font-weight: bold;
+    color: rgb(202, 29, 29);
+    margin: 10px 0;
+}

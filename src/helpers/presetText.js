@@ -23,6 +23,7 @@ const presetText = {
     emptyCart: 'No hay productos en tu carrito',
     finishPurchase: 'Finalizar compra',
     notEnoughStock: 'No hay suficiente stock para completar tu compra',
+    checkData: 'Por favor verifica tus datos',
 
     // stockTextFormatter
     zeroStock: 'No hay más unidades de este producto',
@@ -35,7 +36,7 @@ const presetText = {
     cfSubtitle: 'Llene el siguiente formulario para finalizar su compra',
     cfName: 'Nombre y apellido',
     cfEmail: 'Correo electrónico',
-    cfPhone: 'Número de teléfono',
+    cfPhone: 'Número de teléfono (sin espacios ni guiones)',
 }
 
 export default presetText

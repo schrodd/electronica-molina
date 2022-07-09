@@ -11,21 +11,31 @@ const CartForm = () => {
     const [loading, setLoading] = useState(false)
     const [id, setId] = useState(undefined)
     const [error, setError] = useState(false);
+    const [checkData, setCheckData] = useState(false)
+
     const sendOrder = () => {
         const name = document.querySelector('#name').value
         const email = document.querySelector('#email').value
         const phone = document.querySelector('#phone').value
-        /* insertar validación regex usando useEffect*/
-        newOrder(
-          { name, email, phone },
-          cart,
-          cartTotalValue(cart),
-          setId,
-          setLoading,
-          clearCart,
-          setError
-        );
+        const nameRegex = /(?:[a-z]{2,}\s?)+/i
+        const mailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+        const phoneRegex = /\d{8,11}/
+        if (nameRegex.test(name) && mailRegex.test(email) && phoneRegex.test(phone)) {
+          setCheckData(false)
+          newOrder(
+            { name, email, phone },
+            cart,
+            cartTotalValue(cart),
+            setId,
+            setLoading,
+            clearCart,
+            setError
+          )
+        } else {
+          setCheckData(true)
+        }
     }
+
     const idToClipboard = () => {
       navigator.clipboard.writeText(id);
     }
@@ -77,6 +87,7 @@ const CartForm = () => {
                     placeholder={presetText.cfPhone}
                     id="phone"
                   />
+                  {checkData === true && <p className='check-data'>{presetText.checkData}</p>}
                   <button className="btn1" onClick={() => sendOrder()}>
                     {presetText.finishPurchase}
                   </button>
