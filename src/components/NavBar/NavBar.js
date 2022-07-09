@@ -11,11 +11,11 @@ const NavBar = () => {
                 <img src={logo} alt={"logo"}/>
             </Link>
             <div className='space'> </div>
-            <NavBarItem link={"/category/parlantes"}>Parlantes</NavBarItem>
-            <NavBarItem link={"/category/auriculares"}>Auriculares</NavBarItem>
-            <NavBarItem link={"/category/notebooks"}>Notebooks</NavBarItem>
-            <NavBarItem link={"/category/tablets"}>Tablets</NavBarItem>
-            <NavBarItem link={"/category/wearables"}>Wearables</NavBarItem>
+            <NavBarItem link={"/category/parlantes"}>parlantes</NavBarItem>
+            <NavBarItem link={"/category/auriculares"}>auriculares</NavBarItem>
+            <NavBarItem link={"/category/notebooks"}>notebooks</NavBarItem>
+            <NavBarItem link={"/category/tablets"}>tablets</NavBarItem>
+            <NavBarItem link={"/category/wearables"}>wearables</NavBarItem>
             <CartWidget/>
         </div>
     )

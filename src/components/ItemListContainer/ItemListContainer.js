@@ -1,5 +1,4 @@
 import ItemList from "../ItemList/ItemList"
-// import { getProducts } from "../asyncmock"
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import NotFound from '../NotFound/NotFound'
@@ -13,36 +12,16 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const { productCat } = useParams()
-    
+
     useEffect(() => {
-        getProductsByCategory(productCat, setLoading, setProducts)
-    }, [productCat])
-
-    /* 1er intento - Firebase */
-    /* useEffect(() => {
         setLoading(true)
-        const collectionRef = productCat
-        ? query(collection(db, 'products'), where('category', '==', productCat))
-        : collection(db, 'products')
-
-        getDocs(collectionRef)
-        .then(response => {
-            const productsFormatted = response.docs.map(doc => {
-                return { id: doc.id, ...doc.data() }
-            })
-            setProducts(productsFormatted)
-        }).catch(e => console.log(e))
-        .finally(() => setLoading(false)) */
-
-        /* Asyncmock */
-        /* getProducts().then((response) => {
-            setProducts(
-                params.productCat != undefined
-                ? response.filter(e => e.category == params.productCat)
-                : response
-            )
-        }).catch(e => console.log(e)).finally(() => setLoading(false))
-    }, [productCat]) */
+        getProductsByCategory(productCat, setLoading, setProducts)
+        const navItems = document.getElementsByClassName('nav-item')
+        for (let item of navItems){
+            item.classList.remove('active')
+        }
+        document.querySelector(`#${productCat}`).classList.add('active')
+    }, [productCat])
 
     if (loading) {
         return <Spinner/>
