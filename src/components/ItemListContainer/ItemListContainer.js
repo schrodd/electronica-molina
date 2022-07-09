@@ -20,7 +20,9 @@ const ItemListContainer = () => {
         for (let item of navItems){
             item.classList.remove('active')
         }
-        document.querySelector(`#${productCat}`).classList.add('active')
+        if (productCat) {
+            document.querySelector(`#${productCat}`).classList.add('active')
+        }
     }, [productCat])
 
     if (loading) {
