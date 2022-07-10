@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const {cart, removeItem, clearCart, cartTotalValue} = useContext(CartContext)
-
+    const activeCat = document.querySelector('.nav-item.active')
+    if (activeCat) activeCat.classList.remove('active')
     return (
         <div className='flex-centered'>
             <div className='cart'>
