@@ -9,14 +9,11 @@ import presetText from '../../helpers/presetText'
 const ItemDetailContainer = () => {
     const params = useParams()
     const id = params.productId
-
     const [loading, setLoading] = useState(true)
     const [prod, setProd] = useState({})
     useEffect(() => {
         getProductById(id, setLoading, setProd)
     }, [id])
-
-    // Muestra el spinner mientras carga la data. Si el producto existe, lo muestra. Si no, muestra el componente NotFound.
     return loading ? <Spinner/> : prod.title === undefined ? <NotFound message={presetText.notFoundProduct} /> : <ItemDetail prod={prod}/>
 }
 

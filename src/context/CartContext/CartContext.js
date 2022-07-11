@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
     const amountInCart = (prod) => {
         const exists = cart.find(e => e.prod.id === prod.id)
         if (exists) return exists.qty
-        return -1 // Si no existe en carrito
+        return -1
     }
     const resetCounter = (setCount) => {
         setCount(0)

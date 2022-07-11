@@ -15,7 +15,7 @@
 .cart-item {
     border-bottom: 1px solid rgb(218, 218, 218);
     padding: 10px 0;
-    margin: 0 20px; 
+    margin: 0 20px;
 }
 
 .cart-item img {
@@ -31,6 +31,7 @@
 .cart-title {
     flex-grow: 1;
 }
+
 .cart-title:hover {
     font-weight: bold;
 }
@@ -48,7 +49,7 @@
     height: 25px;
     width: 25px;
     margin-left: 15px;
-    background: rgb(50,50,50);
+    background: rgb(50, 50, 50);
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -68,6 +69,7 @@
     padding: 5px 10px;
     vertical-align: text-bottom;
 }
+
 .cart-list.cart-clear:hover {
     background: rgb(148, 10, 10);
 }
@@ -88,10 +90,13 @@
     margin-top: 20px;
 }
 
-.cart-add, .cart-remove, .cart-clear, .cart-pay{
+.cart-add,
+.cart-remove,
+.cart-clear,
+.cart-pay {
     padding: 5px 15px;
     margin: 5px 5px 3px 0;
-    background-color: rgb(50,50,50);
+    background-color: rgb(50, 50, 50);
     color: white;
     font-size: 13px;
     border: none;
@@ -99,7 +104,10 @@
     cursor: pointer;
 }
 
-.cart-add:hover, .cart-remove:hover, .cart-clear:hover, .cart-pay:hover{
+.cart-add:hover,
+.cart-remove:hover,
+.cart-clear:hover,
+.cart-pay:hover {
     background-color: black;
 }
 

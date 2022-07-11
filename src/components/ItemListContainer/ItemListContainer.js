@@ -9,21 +9,14 @@ import presetText from "../../helpers/presetText"
 
 const ItemListContainer = () => {
 
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [ products, setProducts ] = useState([])
+    const [ loading, setLoading ] = useState(true)
     const { productCat } = useParams()
 
     useEffect(() => {
         setLoading(true)
         getProductsByCategory(productCat, setLoading, setProducts)
-        const navItems = document.getElementsByClassName('nav-item')
-        for (let item of navItems){
-            item.classList.remove('active')
-        }
-        if (productCat) {
-            document.querySelector(`#${productCat}`).classList.add('active')
-        }
-    }, [productCat])
+        }, [productCat])
 
     if (loading) {
         return <Spinner/>

@@ -18,7 +18,8 @@
     margin: 5px;
 }
 
-.cart-form input, .cart-form select {
+.cart-form input,
+.cart-form select {
     width: 80%;
     height: 30px;
     padding: 0 5px;
@@ -27,7 +28,7 @@
 .cart-form input {
     transition: font-size .3s;
     border: none;
-    border-bottom: 2px solid rgb(50,50,50);
+    border-bottom: 2px solid rgb(50, 50, 50);
     background-color: ghostwhite;
     border-radius: 2px;
     outline-width: 0;
@@ -58,8 +59,8 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .cart-form.result {
@@ -69,9 +70,10 @@ input::-webkit-inner-spin-button {
     padding-bottom: 30px;
 }
 
-.cart-form.result .fa-circle-check{
+.cart-form.result .fa-circle-check {
     font-size: 70px;
 }
+
 .cart-form.result .fa-copy {
     margin-left: 10px;
     font-size: 22px;
@@ -79,6 +81,7 @@ input::-webkit-inner-spin-button {
     opacity: .75;
     cursor: pointer;
 }
+
 .cart-form.result .fa-copy:hover {
     opacity: 1;
 }

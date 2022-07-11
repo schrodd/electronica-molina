@@ -1,20 +1,23 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   text-decoration: none;
-  color:rgb(50, 50, 50);
+  color: rgb(50, 50, 50);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
   background-color: ghostwhite;
 }
-.flex-centered{
+
+.flex-centered {
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
 }
+
 .btn1 {
   cursor: pointer;
   color: white;

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import presetText from "../../helpers/presetText"
 import priceFormatter from "../../helpers/priceFormatter"
 
-const Item = ({id, title, price, img, sku}) => { 
-
+const Item = ({ id, title, price, img, sku }) => {
     return (
         <div className="item">
             <div className="item-img">

@@ -72,28 +72,16 @@ const CartForm = () => {
                   <i className="fa-solid fa-cart-shopping"></i>
                   <h1 style={{marginLeft:0}}>{presetText.cfTitle}</h1>
                   <p>{presetText.cfSubtitle}</p>
-                  <input
-                    type="text"
-                    placeholder={presetText.cfName}
-                    id="name"
-                  />
-                  <input
-                    type="email"
-                    placeholder={presetText.cfEmail}
-                    id="email"
-                  />
-                  <input
-                    type="number"
-                    placeholder={presetText.cfPhone}
-                    id="phone"
-                  />
+                  <input type="text" placeholder={presetText.cfName} id="name"/>
+                  <input type="email" placeholder={presetText.cfEmail} id="email"/>
+                  <input type="number" placeholder={presetText.cfPhone} id="phone" />
                   {checkData === true && <p className='check-data'>{presetText.checkData}</p>}
                   <button className="btn1" onClick={() => sendOrder()}>
                     {presetText.finishPurchase}
                   </button>
                 </div>
               </div>
-            );
+            )
         }
     }
 }

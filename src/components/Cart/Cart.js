@@ -2,7 +2,7 @@ import './Cart.css'
 import { useContext } from 'react'
 import CartContext from '../../context/CartContext/CartContext'
 import CartItem from '../CartItem/CartItem'
-import presetText from '../../helpers/presetText'
+import presetText from          '../../helpers/presetText'
 import priceFormatter from '../../helpers/priceFormatter'
 import NotFound from '../NotFound/NotFound'
 import { Link } from 'react-router-dom'
@@ -25,7 +25,6 @@ const Cart = () => {
                         <Link className='btn1' to='/cart-form'>{presetText.finishPurchase}</Link>
                     </div>
                 }
-                
             </div>
         </div>
     )

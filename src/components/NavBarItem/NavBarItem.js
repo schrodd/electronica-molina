@@ -1,12 +1,12 @@
 import "./NavBarItem.css"
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const NavBarItem = ({children, link}) => {
+const NavBarItem = ({ children, link }) => {
     return (
-        <Link className={'nav-item'} id={children} to={link}>
+        <NavLink className='nav-item' to={link}>
             <i className="fa-solid fa-angle-right"></i>
             {children}
-        </Link>
+        </NavLink>
     )
 }
 

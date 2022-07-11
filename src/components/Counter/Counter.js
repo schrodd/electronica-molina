@@ -1,6 +1,6 @@
 import './Counter.css'
 
-const Counter = ({count, setCount}) => {
+const Counter = ({ count, setCount }) => {
 
     function add(){
         setCount(count + 1)

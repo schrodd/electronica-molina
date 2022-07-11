@@ -1,16 +1,18 @@
 @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
 
-.spinner{
-    margin-top: 50px;
+  to {
+    transform: rotate(359deg);
+  }
 }
-.spinner i{
-    font-size: 5rem;
-    animation: rotation 1s infinite linear;
+
+.spinner {
+  margin-top: 50px;
+}
+
+.spinner i {
+  font-size: 5rem;
+  animation: rotation 1s infinite linear;
 }

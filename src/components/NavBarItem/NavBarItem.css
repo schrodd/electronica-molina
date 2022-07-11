@@ -1,15 +1,17 @@
-.nav-item{
-    text-align: center;
-    text-transform: capitalize;
-    padding: 0px 20px;
-    flex-grow: 1;
-    transition: font-size .5s 0s;
-  }
-  .nav-item:hover, .nav-item.active{
-    font-size: 17px;
-    font-weight:600;
-  }
-  a>i {
-    margin-right: 8px;
-    font-size: 12px;
-  }
+.nav-item {
+  text-align: center;
+  padding: 0px 20px;
+  flex-grow: 1;
+  transition: font-size .5s 0s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+a>i {
+  margin-right: 8px;
+  font-size: 12px;
+}
