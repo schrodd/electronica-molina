@@ -57,7 +57,14 @@ Hay una categoría (wearables) que intencionalmente no contiene productos, por l
 He añadido también un spinner para que se muestre hasta que el componente se renderice nuevamente con la información que carga de forma asíncrona.
 Los estilos de la página son CSS puro, en algún momento pasaré todo a SASS.
 
-<img src='https://i.ibb.co/TTVRvZy/Animation.gif' width='500px'>
+Esta es una demostración de la navegación por el sitio, se muestra:
+* Index
+* Categorías (filtros, navegación)
+* Detalle (contador, verif. de stock)
+* Carrito (manejo de datos, sumar y eliminar productos)
+* Checkout (verificación de datos, 2da verif. de stock)
+
+<img src='/gif.gif'>
 
 A continuación describiré los componentes más importantes:
 
