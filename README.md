@@ -57,7 +57,7 @@ Hay una categoría (wearables) que intencionalmente no contiene productos, por l
 He añadido también un spinner para que se muestre hasta que el componente se renderice nuevamente con la información que carga de forma asíncrona.
 Los estilos de la página son CSS puro, en algún momento pasaré todo a SASS.
 
-[Este es un gif del estado actual del proyecto](https://i.ibb.co/TTVRvZy/Animation.gif)
+<img src='https://i.ibb.co/TTVRvZy/Animation.gif' width='800px'>
 
 A continuación describiré los componentes más importantes:
 
