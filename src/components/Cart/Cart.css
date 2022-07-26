@@ -1,0 +1,132 @@
+.cart {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 1000px;
+    min-height: 400px;
+    margin: 20px;
+}
+
+.cart-h1 {
+    margin: 20px 0 10px 20px;
+    display: inline-block;
+}
+
+.cart-item {
+    border-bottom: 1px solid rgb(218, 218, 218);
+    padding: 10px 0;
+    margin: 0 20px;
+}
+
+.cart-item img {
+    max-width: 50px;
+    margin: 0 20px;
+}
+
+.cart-qty {
+    margin: 0 20px 0 0;
+    font-weight: bold;
+}
+
+.cart-title {
+    flex-grow: 1;
+}
+
+.cart-title:hover {
+    font-weight: bold;
+}
+
+.cart-price-unit {
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.cart-price {
+    font-weight: bold;
+}
+
+.cart-remove-item {
+    height: 25px;
+    width: 25px;
+    margin-left: 15px;
+    background: rgb(50, 50, 50);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.cart-remove-item:hover {
+    background: rgb(148, 10, 10);
+}
+
+.cart-remove-item i {
+    color: white;
+}
+
+.cart-list.cart-clear {
+    margin-left: 20px;
+    font-size: 12px;
+    padding: 5px 10px;
+    vertical-align: text-bottom;
+}
+
+.cart-list.cart-clear:hover {
+    background: rgb(148, 10, 10);
+}
+
+.cart-empty {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 20px 20px 0;
+    text-align: right;
+}
+
+.cart-go-back {
+    margin-top: 20px;
+}
+
+.cart-add,
+.cart-remove,
+.cart-clear,
+.cart-pay {
+    padding: 5px 15px;
+    margin: 5px 5px 3px 0;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.cart-add:hover,
+.cart-remove:hover,
+.cart-clear:hover,
+.cart-pay:hover {
+    background-color: black;
+}
+
+.cart-units {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart-total-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-total-section a {
+    margin-right: 20px;
+}
+
+.cart-total-section a:hover {
+    font-weight: bold;
+}

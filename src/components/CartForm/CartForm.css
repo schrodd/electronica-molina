@@ -1,0 +1,93 @@
+.cart-form {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 500px;
+    min-height: 400px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-form h1 {
+    margin: 20px 0 10px 20px;
+}
+
+.cart-form * {
+    margin: 5px;
+}
+
+.cart-form input,
+.cart-form select {
+    width: 80%;
+    height: 30px;
+    padding: 0 5px;
+}
+
+.cart-form input {
+    transition: font-size .3s;
+    border: none;
+    border-bottom: 2px solid rgb(50, 50, 50);
+    background-color: ghostwhite;
+    border-radius: 2px;
+    outline-width: 0;
+}
+
+.cart-form input:focus {
+    font-size: 16px;
+}
+
+.cart-form p {
+    margin-bottom: 20px;
+}
+
+.cart-form button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cart-form button:hover {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.cart-form i {
+    font-size: 40px;
+    margin: 30px 0 -5px 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart-form.result {
+    width: auto;
+    min-height: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.cart-form.result .fa-circle-check {
+    font-size: 70px;
+}
+
+.cart-form.result .fa-copy {
+    margin-left: 10px;
+    font-size: 22px;
+    transition: opacity .3s;
+    opacity: .75;
+    cursor: pointer;
+}
+
+.cart-form.result .fa-copy:hover {
+    opacity: 1;
+}
+
+.cart-form .check-data {
+    font-weight: bold;
+    color: rgb(202, 29, 29);
+    margin: 10px 0;
+}

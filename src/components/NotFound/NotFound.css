@@ -1,0 +1,12 @@
+.no-products {
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.no-products * {
+  margin: 10px 0;
+}
+
+.no-products i {
+  font-size: 3rem;
+}

@@ -1,0 +1,28 @@
+.navBar {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.logo img {
+  width: 100px;
+  padding: 10px;
+  transition: width .3s 0s;
+}
+
+.logo img:hover {
+  width: 115px;
+}
+
+.logo {
+  width: 150px;
+  display: block;
+  flex-grow: 1;
+}
+
+.space {
+  flex-grow: 32;
+}
